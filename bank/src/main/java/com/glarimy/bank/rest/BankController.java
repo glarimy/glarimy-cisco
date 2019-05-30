@@ -21,7 +21,6 @@ import org.glassfish.jersey.media.multipart.FormDataParam;
 
 import com.glarimy.bank.api.Account;
 import com.glarimy.bank.api.Bank;
-import com.glarimy.bank.api.BankException;
 import com.glarimy.bank.api.Customer;
 import com.glarimy.bank.api.Imager;
 import com.glarimy.bank.api.Transaction;
@@ -40,7 +39,7 @@ public class BankController {
 	@POST
 	@Path("/customer")
 	@Consumes({ MediaType.MULTIPART_FORM_DATA })
-	public Response openAccount(@FormDataParam("name") String name, @FormDataParam("phone") long phone,
+	public Response openAccountFor(@FormDataParam("name") String name, @FormDataParam("phone") long phone,
 			@FormDataParam("picture") InputStream is, @FormDataParam("picture") FormDataContentDisposition picture,
 			@Context UriInfo uriInfo) {
 		Customer customer = new Customer();

@@ -13,7 +13,7 @@ import com.glarimy.bank.api.Imager;
 
 public class ImageService implements Imager {
 
-	private static String PATH = "/Users/glarimy/Professional/Engineering/Workspace/images/";
+	private static String PATH = "/Users/glarimy/Professional/Workspace/";
 	private static Map<Integer, String> images = new HashMap<>();
 
 	@Override
@@ -30,7 +30,7 @@ public class ImageService implements Imager {
 			os.close();
 			images.put(number, name);
 		} catch (Exception e) {
-			throw new BankException();
+			throw new BankException(e);
 		}
 	}
 
